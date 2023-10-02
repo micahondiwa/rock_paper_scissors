@@ -9,7 +9,9 @@ function getComputerChoice() {
     return options[choice];
 }
 
-// A function that plays a single round
+/* 
+A function that plays a single round
+*/
 function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     computerSelection = computerSelection.toLowerCase();
@@ -31,7 +33,9 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-// A function that plays 5 rounds and records a winner
+/*
+ A function that plays 5 rounds and records a winner
+ */
 function game() {
     let playerScore = 0;
     let computerScore = 0;
@@ -60,5 +64,7 @@ function game() {
     }
 }
 
-// Start the game
+/*
+Start the game
+*/
 game();
