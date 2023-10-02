@@ -1,34 +1,59 @@
 // A function that will randomly pick either 'Rock', 'Paper', or 'Scissors'.
-
 function getComputerChoice() {
-    let options = ['rock', 'paper', 'scissors'];
-    let choice = Math.floor(Math.random() * options.length);
+    const options = ['rock', 'paper', 'scissors'];
+    const choice = Math.floor(Math.random() * options.length);
     return options[choice];
 }
 
-// a function that plays a single round
+// A function that plays a single round
 function playRound(playerSelection, computerSelection) {
-    if ((computerSelection == 'rock'.toLowerCase() &&
-        playerSelection == 'paper'.toLowerCase()) ||
-        (computerSelection == 'paper'.toLowerCase() &&
-            playerSelection == 'scissors'.toLowerCase()) ||
-        (computerSelection == 'scissors'.toLowerCase() &&
-            playerSelection == 'rock'.toLowerCase())) {
-        return `You Win! ${playerSelection} beats ${computerSelection}.`;
-    } else if
-        ((computerSelection == 'rock'.toLowerCase() &&
-            playerSelection == 'scissors'.toLowerCase()) ||
-        (computerSelection == 'paper'.toLowerCase() &&
-            playerSelection == 'rock'.toLowerCase()) ||
-        (computerSelection == 'scissors'.toLowerCase() &&
-            playerSelection == 'paper'.toLowerCase())) {
-        return `You Lose! ${computerSelection} beats ${playerSelection}.`;
+    playerSelection = playerSelection.toLowerCase();
+    computerSelection = computerSelection.toLowerCase();
+
+    if (
+        (computerSelection === 'rock' && playerSelection === 'paper') ||
+        (computerSelection === 'paper' && playerSelection === 'scissors') ||
+        (computerSelection === 'scissors' && playerSelection === 'rock')
+    ) {
+        return 'Player';
+    } else if (
+        (computerSelection === 'rock' && playerSelection === 'scissors') ||
+        (computerSelection === 'paper' && playerSelection === 'rock') ||
+        (computerSelection === 'scissors' && playerSelection === 'paper')
+    ) {
+        return 'Computer';
     } else {
-        return `You Draw!`;
+        return 'Draw';
     }
 }
-const playerSelection = 'rock';
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
 
+// A function that plays 5 rounds and records a winner
+function game() {
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        const playerSelection = prompt('Enter your choice: rock, paper, or scissors').toLowerCase();
+        const computerSelection = getComputerChoice();
+        const roundResult = playRound(playerSelection, computerSelection);
+
+        if (roundResult === 'Player') {
+            playerScore++;
+        } else if (roundResult === 'Computer') {
+            computerScore++;
+        }
+
+        console.log(`Round ${i + 1}: ${roundResult}`);
+    }
+
+    if (playerScore > computerScore) {
+        console.log('Player wins the game!');
+    } else if (playerScore < computerScore) {
+        console.log('Computer wins the game!');
+    } else {
+        console.log('It\'s a draw!');
+    }
+}
+
+// Start the game
+game();
