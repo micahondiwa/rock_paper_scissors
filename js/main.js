@@ -47,9 +47,9 @@ function game() {
     }
 
     if (playerScore > computerScore) {
-        console.log('Player wins the game!');
+        console.log('Player wins!');
     } else if (playerScore < computerScore) {
-        console.log('Computer wins the game!');
+        console.log('Computer wins!');
     } else {
         console.log('It\'s a draw!');
     }
