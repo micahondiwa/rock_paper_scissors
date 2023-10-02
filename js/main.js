@@ -15,15 +15,15 @@ function playRound(playerSelection, computerSelection) {
         (computerSelection === 'paper' && playerSelection === 'scissors') ||
         (computerSelection === 'scissors' && playerSelection === 'rock')
     ) {
-        return 'Player';
+        return 'Player'; // Player wins
     } else if (
         (computerSelection === 'rock' && playerSelection === 'scissors') ||
         (computerSelection === 'paper' && playerSelection === 'rock') ||
         (computerSelection === 'scissors' && playerSelection === 'paper')
     ) {
-        return 'Computer';
+        return 'Computer'; //Computer wins
     } else {
-        return 'Draw';
+        return 'Draw'; //it is a draw
     }
 }
 
