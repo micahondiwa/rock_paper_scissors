@@ -1,7 +1,11 @@
-// A function that will randomly pick either 'Rock', 'Paper', or 'Scissors'.
+/*
+A function that will randomly pick either 
+'Rock', 'Paper', or 'Scissors'.
+*/
 function getComputerChoice() {
     const options = ['rock', 'paper', 'scissors'];
-    const choice = Math.floor(Math.random() * options.length);
+    const choice = Math.floor(Math.random() *
+        options.length);
     return options[choice];
 }
 
@@ -33,7 +37,8 @@ function game() {
     let computerScore = 0;
 
     for (let i = 0; i < 5; i++) {
-        const playerSelection = prompt('Enter your choice: rock, paper, or scissors').toLowerCase();
+        const playerSelection = prompt('Enter your choice: rock, paper, or scissors').
+            toLowerCase();
         const computerSelection = getComputerChoice();
         const roundResult = playRound(playerSelection, computerSelection);
 
