@@ -67,4 +67,8 @@ function game() {
 /*
 Start the game
 */
-game();
+document.querySelector(button) {
+    onclick{
+        playRound()
+    }
+}
